@@ -13,5 +13,15 @@
     <%= yield %>
     <div class="clear"></div>
   </div>
+
+  <script>
+    $(document).ready(function() {
+      $('#new-edit').submit(function() {
+        selectedTags = $('#tags').val()
+        $('#tags').after('<input type="hidden" name="tags" value="' + selectedTags.join(',') + '">')
+      })
+    })
+
+  </script>
 </body>
 </html>

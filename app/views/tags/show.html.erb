@@ -1,0 +1,7 @@
+<h1><%= @tag.name %></h1>
+<%= flash[:notice] %>
+<p>
+  <a href="/tags">Back to Index</a> |
+  <a href="/tags/<%= @tag.slug %>/edit">Edit</a> |
+  <a href="/tags/<%= @tag.slug %>" data-method="delete" data-confirm="Are you sure?">Delete</a>
+</p>

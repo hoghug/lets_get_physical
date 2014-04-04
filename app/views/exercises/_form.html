@@ -1,3 +1,14 @@
   <label class="f-label"><span>Name:</span><input name="exercise[name]" type="text" value="<%= @exercise.name %>"></label>
-  <div class="clear"></div>
+  <label class="f-label"><span>Tags:</span>
+    <select id="tags" multiple>
+      <% @tags.each do |tag| %>
+        <option
+        <% if @exercise_tags.include?(tag) %>
+        selected
+        <% end %>
+        value="<%= tag.id %>"><%= tag.name %></option>
+      <% end %>
+    </select>
+</label>
+<div class="clear"></div>
   <button class="btn btn-danger">Submit Instruction</button>

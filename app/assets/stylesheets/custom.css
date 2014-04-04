@@ -54,3 +54,22 @@ h2 {
   margin: 0 8px 0 0;
   font-weight: bold;
 }
+
+.t-label {
+  margin:0 8px 0 0;
+  display:inline-block;
+}
+
+.ex-tag {
+  display: inline-block;
+  padding: 4px 7px;
+  color:white;
+  background-color: #3973B2;
+  border-radius: 3px;
+}
+
+#tags {
+  width:150px;
+  height: 100px;
+
+}
