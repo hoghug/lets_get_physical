@@ -16,10 +16,37 @@
 
   <script>
     $(document).ready(function() {
-      $('#new-edit').submit(function() {
-        selectedTags = $('#tags').val()
-        $('#tags').after('<input type="hidden" name="tags" value="' + selectedTags.join(',') + '">')
+
+
+      $('#addmore').click(function() {
+        order = $(this).prev().prev('.wk-ex').data('order') + 1
+        copy = $($(this).prev().prev('.wk-ex').clone()).insertAfter($(this).prev().prev('.wk-ex'))
+        copy.attr('data-order',order)
+        copy.find('.ex-c').text('Exercise ' + order)
+        copy.find('.ex-reps').val('')
       })
+
+      $('#ne-workouts').submit(function() {
+        // event.preventDefault();
+        wk_exercises = []
+        $('.wk-ex').each(function() {
+          ex_id = $(this).find('.ex-select').val()
+          ex_order = $(this).data('order')
+          ex_reps = $(this).find('.ex-reps').val()
+          wk_exercises.push(ex_id + '-' + ex_order + '-' + ex_reps)
+        })
+        $('#ne-workouts').append('<input name="movements" type="text" value="' + wk_exercises + '">')
+      })
+
+      $('#ne-exercises').submit(function() {
+        if ($('#tags').length) {
+          selectedTags = $('#tags').val()
+          $('#tags').after('<input type="hidden" name="tags" value="' + selectedTags.join(',') + '">')
+        }
+      })
+
+
+
     })
 
   </script>

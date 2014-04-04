@@ -1,6 +1,6 @@
-<h1>Edit Exercise</h1>
+<h1>Edit Tag</h1>
 <hr>
-<form id="ne-exercises" action='/exercises/<%= @exercise.slug %>' method="post">
+<form id="ne-workout" action='/tags/<%= @tag.slug %>' method="post">
   <input type="hidden" name="_method" value="patch">
   <%= render('form') %>
 </form>

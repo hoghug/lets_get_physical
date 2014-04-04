@@ -1,0 +1,15 @@
+  <label class="f-label"><span>Name:</span><input class="form-control" name="workout[name]" type="text" value="<%= @workout.name %>"></label>
+  <div class="wk-ex" data-order="1">
+   <label class="f-label"><span class="ex-c">Exercise 1:</span>
+    <select class="ex-select form-control">
+      <% @exercises.each do |exercise| %>
+        <option value="<%= exercise.id %>"> <%= exercise.name %> </option>
+      <% end %>
+    </select>
+    <input class="ex-reps form-control" type="number" placeholder="reps" size="1" min="1">
+   </label>
+  </div>
+  <div class="clear"></div>
+  <span id="addmore" class="btn btn-success">+ Add Exercise</span>
+  <div class="clear"></div>
+  <button id="submit" class="btn btn-danger">Submit</button>

@@ -1,6 +1,7 @@
 class Exercise < ActiveRecord::Base
   has_and_belongs_to_many :tags
-  has_and_belongs_to_many :workouts
+  has_many :movements
+  has_many :workouts, :through => :movements
 
   after_save :slugger
 

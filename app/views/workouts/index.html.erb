@@ -1,0 +1,11 @@
+<h1>All Workouts</h1>
+<ul>
+  <% @workouts.each do |workout| %>
+    <li><a href="workouts/<%= workout.slug %>"><%= workout.name %></a></li>
+  <% end %>
+</ul>
+<br>
+<p>
+  <a href="workouts/new">Add New Workout</a>
+</p>
+

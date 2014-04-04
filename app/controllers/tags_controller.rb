@@ -7,6 +7,7 @@ class TagsController < ApplicationController
 
   def show
     @tag = Tag.find_by(slug: params[:slug])
+    @exercises = @tag.exercises
     render('show.html.erb')
   end
 

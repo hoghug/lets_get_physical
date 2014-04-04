@@ -1,5 +1,14 @@
-<h1><%= @tag.name %></h1>
 <%= flash[:notice] %>
+<h1><%= @tag.name %></h1>
+
+<div>Exercises:
+  <ul>
+    <% @exercises.each do |exercise| %>
+      <li><a href="/exercises/<%= exercise.slug %>"><%= exercise.name %></a></li>
+    <% end %>
+  </ul>
+</div>
+
 <p>
   <a href="/tags">Back to Index</a> |
   <a href="/tags/<%= @tag.slug %>/edit">Edit</a> |

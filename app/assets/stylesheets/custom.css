@@ -40,7 +40,6 @@ h2 {
 
 }
 
-
 .f-label {
   float:left;
   clear:both;
@@ -60,16 +59,52 @@ h2 {
   display:inline-block;
 }
 
+#submit {
+  margin:20px 0;
+}
+
+#addmore {
+  cursor: pointer;
+  clear:both;
+}
+
 .ex-tag {
   display: inline-block;
   padding: 4px 7px;
   color:white;
   background-color: #3973B2;
   border-radius: 3px;
+  text-decoration: none;
+}
+
+.ex-tag:hover {
+  color: #FFC96C;
+  text-decoration: none;
+}
+
+#display-tags {
+  margin: 20px 0;
 }
 
 #tags {
   width:150px;
   height: 100px;
-
 }
+
+.wk-ex {
+  clear:both;
+}
+
+.form-control {
+  display: inline-block !important;
+  width: 200px !important;
+}
+
+.ex-reps {
+  width:75px !important;
+}
+
+#wk-exercises li {
+  list-style-type: none;
+}
+
