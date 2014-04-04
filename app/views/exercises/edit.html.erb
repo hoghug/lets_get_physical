@@ -1,0 +1,7 @@
+<h1>Edit Exercise</h1>
+<hr>
+<form id="new-edit" action='/exercises/<%= @exercise.slug %>' method="post">
+  <input type="hidden" name="_method" value="patch">
+  <%= render('form') %>
+</form>
+<div class="clear"></div>

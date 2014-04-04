@@ -1,0 +1,7 @@
+<h1><%= @exercise.name %></h1>
+<%= flash[:notice] %>
+<p>
+  <a href="/exercises">Back to Index</a> |
+  <a href="/exercises/<%= @exercise.slug %>/edit">Edit</a> |
+  <a href="/exercises/<%= @exercise.slug %>" data-method="delete" data-confirm="Are you sure?">Delete</a>
+</p>

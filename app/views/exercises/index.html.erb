@@ -1,0 +1,11 @@
+<h1>All Exercises</h1>
+<ul>
+  <% @exercises.each do |exercise| %>
+    <li><a href="exercises/<%= exercise.slug %>"><%= exercise.name %></a></li>
+  <% end %>
+</ul>
+<br>
+<p>
+  <a href="exercises/new">Add New Exercise</a>
+</p>
+
