@@ -41,12 +41,13 @@ class ExercisesController < ApplicationController
   def update
     @exercise = Exercise.find_by(slug: params[:slug])
     @existing_tags = @exercise.tags
+    @existing_tags.each do |tag|
+      @exercise.tags.delete(tag)
+    end
 
     @selected_tags = params[:tags].split(',')
     @selected_tags.each do |tag|
-      unless @existing_tags.include?(tag)
-        @exercise.tags << Tag.find(tag.to_i)
-      end
+      @exercise.tags << Tag.find(tag.to_i)
     end
 
     if @exercise.update(params[:exercise])
