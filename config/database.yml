@@ -1,0 +1,18 @@
+
+development:
+  adapter: postgresql
+  database: fitness_development
+
+
+test:
+  adapter: postgresql
+  database: fitness_test
+
+
+# production:
+#   adapter: postgresql
+#   encoding: unicode
+#   database: fitness_production
+#   pool: 5
+#   username: fitness
+#   password:
