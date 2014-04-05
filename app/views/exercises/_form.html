@@ -3,9 +3,10 @@
     <select id="tags" multiple>
       <% @tags.each do |tag| %>
         <option
-        <% if @exercise_tags.include?(tag) %>
+        <% if @exercise_tags
+         if @exercise_tags.include?(tag) %>
         selected
-        <% end %>
+        <% end end %>
         value="<%= tag.id %>"><%= tag.name %></option>
       <% end %>
     </select>

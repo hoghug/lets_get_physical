@@ -9,6 +9,7 @@ class WorkoutsController < ApplicationController
     @workout = Workout.find_by(slug: params[:slug])
     @movements = @workout.movements.find(:all, :order => 'number')
     @tags = []
+    @exercises = []
     render('show.html.erb')
   end
 
@@ -24,7 +25,6 @@ class WorkoutsController < ApplicationController
     @movements = params[:movements].split(',')
     @movements.each do |move|
       parts = move.split('-')
-      # @exercise = Exercise.find(parts[0].to_i)
       Movement.create({:exercise_id => parts[0].to_i, :workout_id => @workout.id, :number => parts[1].to_i, :reps => parts[2].to_i})
     end
 

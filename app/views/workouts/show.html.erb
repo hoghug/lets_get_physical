@@ -6,10 +6,20 @@
     <%
       @movements.each do |movement|
       exercise = Exercise.find(movement.exercise_id)
+      @exercises << exercise
+      @tags << exercise.tags
     %>
       <li><%= movement.number %>. <a href="/exercises/<%= exercise.slug %>"><%= exercise.name %></a> - <%= movement.reps %></li>
     <% end %>
   </ul>
+</div>
+
+<div id="display-tags">Tags:
+  <% 
+  @tags.flatten!
+  @tags.uniq.each do |tag| %>
+    <a class="ex-tag" href="/tags/<%= tag.slug %>"><%= tag.name %></a>
+  <% end %>
 </div>
 
 <p>

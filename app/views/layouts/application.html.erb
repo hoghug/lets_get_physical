@@ -35,13 +35,13 @@
           ex_reps = $(this).find('.ex-reps').val()
           wk_exercises.push(ex_id + '-' + ex_order + '-' + ex_reps)
         })
-        $('#ne-workouts').append('<input name="movements" type="text" value="' + wk_exercises + '">')
+        $('#ne-workouts').append('<input name="movements" type="hidden" value="' + wk_exercises + '">')
       })
 
       $('#ne-exercises').submit(function() {
         if ($('#tags').length) {
           selectedTags = $('#tags').val()
-          $('#tags').after('<input type="hidden" name="tags" value="' + selectedTags.join(',') + '">')
+          $('#tags').after('<input name="tags" type="hidden" value="' + selectedTags.join(',') + '">')
         }
       })
 
