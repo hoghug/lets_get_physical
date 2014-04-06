@@ -1,4 +1,10 @@
 class ExercisesController < ApplicationController
+  def home
+    @exercises = Exercise.all
+    @workouts = Workout.all
+    @tags = Tag.all
+    render('/layouts/home.html.erb')
+  end
 
   def index
     @exercises = Exercise.all
@@ -8,6 +14,11 @@ class ExercisesController < ApplicationController
   def show
     @exercise = Exercise.find_by(slug: params[:slug])
     @tags = @exercise.tags
+    @movements = @exercise.movements
+    @workouts = []
+    @movements.each do |movement|
+      @workouts << movement.workout
+    end
     render('show.html.erb')
   end
 

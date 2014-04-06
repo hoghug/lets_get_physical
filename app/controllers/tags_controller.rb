@@ -8,6 +8,15 @@ class TagsController < ApplicationController
   def show
     @tag = Tag.find_by(slug: params[:slug])
     @exercises = @tag.exercises
+    @movements = []
+    @exercises.each do |exercise|
+      @movements << exercise.movements
+    end
+    @workouts = []
+    @movements.flatten!
+    @movements.each do |movement|
+      @workouts << movement.workout
+    end
     render('show.html.erb')
   end
 

@@ -1,5 +1,5 @@
 Fitness::Application.routes.draw do
-  match('/', { :via => :get, :to => 'exercises#index'})
+  match('/', { :via => :get, :to => 'exercises#home'})
    match('exercises', { :via => :get, :to => 'exercises#index'})
    match('exercises/new', { :via => :get, :to => 'exercises#new'})
    match('exercises/:slug', { :via => :get, :to => 'exercises#show'})

@@ -1,5 +1,12 @@
 <%= flash[:notice] %>
 <h1><%= @exercise.name %></h1>
+<div>Workouts with "<%= @exercise.name %>":
+  <ul>
+    <% @workouts.uniq.each do |workout| %>
+      <li><a href="/workouts/<%= workout.slug %>"><%= workout.name %></a></li>
+    <% end %>
+  </ul>
+</div>
 
 <div id="display-tags">Tags:
   <% @tags.each do |tag| %>

@@ -9,6 +9,14 @@
   </ul>
 </div>
 
+<div>Workouts tagged with "<%= @tag.name %>":
+  <ul>
+    <% @workouts.uniq.each do |workout| %>
+      <li><a href="/workouts/<%= workout.slug %>"><%= workout.name %></a></li>
+    <% end %>
+  </ul>
+</div>
+
 <p>
   <a href="/tags">Back to Index</a> |
   <a href="/tags/<%= @tag.slug %>/edit">Edit</a> |

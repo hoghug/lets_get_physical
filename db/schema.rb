@@ -27,16 +27,16 @@ ActiveRecord::Schema.define(version: 20140404222407) do
     t.integer "tag_id"
   end
 
+  create_table "tags", force: true do |t|
+    t.string "name"
+    t.string "slug"
+  end
+
   create_table "movements", force: true do |t|
     t.integer "number"
     t.integer "exercise_id"
     t.integer "workout_id"
     t.integer "reps"
-  end
-
-  create_table "tags", force: true do |t|
-    t.string "name"
-    t.string "slug"
   end
 
   create_table "workouts", force: true do |t|

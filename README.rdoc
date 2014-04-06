@@ -17,3 +17,4 @@ have a client list and a client schedule
 
 predetermine a workout routine for a certain client on a certain day.
 
+client interface, select workout by tag/exercise

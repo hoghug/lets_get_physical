@@ -1,0 +1,27 @@
+<div class="col-md-3">
+	<h4>Workouts</h4>
+	<ul>
+		<% @workouts.each do |workout| %>
+			<li><label class="h-label h-radio"><input name="workout" type="radio" value="<%= workout.id %>"><span><%= workout.name %></span></label></li>
+		<% end %>
+	</ul>
+</div>
+
+<div class="col-md-3">
+	<h4>Tags</h4>
+	<ul>
+		<% @tags.each do |tag| %>
+			<li><label class="h-label h-checkbox"><input name="tag" type="checkbox" value="<%= tag.id %>"><span><%= tag.name %></span></label></li>
+		<% end %>
+	</ul>
+</div>
+
+<div class="col-md-3">
+	<h4>Exercises</h4>
+	<ul>
+		<% @exercises.each do |exercise| %>
+			<li><a href="/exercises/<%= exercise.slug %>"><%= exercise.name %></a></li>
+		<% end %>
+	</ul>
+
+</div>
